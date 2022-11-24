@@ -1,0 +1,194 @@
+// Flex property Mixing Start
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin justify-content($value) {
+
+  @if ($value == 'center') {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+  }
+
+  @else if ($value == 'space-between') {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  }
+
+  @else if ($value == 'space-around') {
+    -ms-flex-pack: distribute;
+  }
+
+  @else if ($value == 'space-evenly') {
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+  }
+
+  @else if ($value == 'flex-start') {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start
+  }
+
+  @else if ($value == 'flex-end') {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  }
+
+  justify-content: $value;
+}
+
+@mixin align-items($value) {
+  @if ($value == 'center') {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+  }
+
+  @else if ($value == 'stretch') {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+  }
+
+  @else if ($value == 'flex-start') {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  }
+
+  @else if ($value == 'flex-end') {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  }
+
+  align-items: $value;
+}
+
+@mixin flex-direction ($value) {
+  @if ($value == "row") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+  }
+
+  @else if ($value == "column") {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+  }
+
+  @else if ($value == "row-reverse") {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+  }
+
+  @else if ($value == "column-reverse") {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+  }
+  
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-wrap($value) {
+  -ms-flex-wrap: $value;
+  flex-wrap: $value;
+}
+
+@mixin align-content($value) {
+  @if($value == 'center') {
+    -ms-flex-line-pack: $value;
+  } @else if($value == 'space-between') {
+    -ms-flex-line-pack: justify;
+  } @else if($value == 'space-around') {
+    -ms-flex-line-pack: distribute;
+  } @else if($value == 'stretch') {
+    -ms-flex-line-pack: $value;
+  } @else if($value == 'flex-start') {
+    -ms-flex-line-pack: start;
+  } @else if($value == 'flex-end') {
+    -ms-flex-line-pack: end;
+  }
+
+  align-content: $value;
+}
+
+@mixin flex-basis ($value) {
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+@mixin onlyflex ($value) {
+  -webkit-box-flex: $value;
+  -ms-flex: $value;
+  flex: $value;
+}
+
+// Flexbox Mixin
+@mixin flexbox($flex: null, $align: null, $direction:null, $wrap:null, $justify: null,) {
+  @if $flex {
+    @include display-flex();
+  }
+  @if $align {
+    @include align-items($align);
+  }
+  @if $justify {
+    @include justify-content($justify);
+  }
+  @if $direction {
+    @include flex-direction($direction);
+  }
+  @if $wrap {
+    @include flex-wrap($wrap);
+  }
+
+}
+
+// Transition Mixin
+@mixin  transition ($value) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+// Transform Mixin
+@mixin transform ($xvalue, $yvalue) {
+  -webkit-transform: translate($xvalue, $yvalue);
+  -ms-transform: translate($xvalue, $yvalue);
+  transform: translate($xvalue, $yvalue);
+}
+
+// Position Mixin
+@mixin positions ($position, $z-index:null, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  z-index: $z-index;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+//Icons Mixin
+@mixin icons ($content) {
+  content: quote($content);
+}
+
+// Media Query Mixins
+@mixin responsiveMinMax ($maxValue, $minValue) {
+  @media only screen and (max-width: $maxValue) and (min-width: $minValue){
+    @content;
+  }
+}
+
+// Max Width Media Query mixin
+@mixin responsiveMax ($maxValue) {
+  @media only screen and (max-width: $maxValue){
+    @content;
+  }
+}
+
+// Min Width Media Query mixin
+@mixin responsiveMin ($minValue) {
+  @media only screen and (min-width: $minValue){
+    @content;
+  }
+}
