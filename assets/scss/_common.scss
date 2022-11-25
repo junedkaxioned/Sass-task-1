@@ -1,8 +1,10 @@
 /* for wrapper */
 .wrapper {
   max-width: 1360px;
-  width: 93.5%; 
+  width: 57%; 
   margin: 0 auto;
 }
 
-img { width: auto; }
+img { 
+  @include image(cover, center)
+}

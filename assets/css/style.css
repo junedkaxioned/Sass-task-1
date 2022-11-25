@@ -1,0 +1,270 @@
+/* Reset CSS */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Align radios and text inputs with their label */
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+/* Hand cursor on clickable input elements */
+label,
+input[type=button],
+input[type=submit],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em {
+  font-style: italic;
+}
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.7em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* 1.2. Clear Fix ========================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+
+.cf {
+  *zoom: 1;
+}
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* for wrapper */
+.wrapper {
+  max-width: 1360px;
+  width: 57%;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: #F7F7F7;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
+}
+.header-content {
+  padding: 15px 0 17px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+}
+
+.input-check, .burger {
+  display: none;
+}
+
+.pull-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.pull-icon {
+  color: #212121;
+}
+.pull-icon::after {
+  content: "\f02e";
+  color: #8EB63E;
+  font-family: "FontAwesome";
+  font-size: 12px;
+  padding-left: 8px;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.nav-list {
+  margin: 15px 5px 0;
+}
+.nav-list:last-child {
+  margin-right: 0;
+}
+.nav-list a {
+  padding: 14px;
+  color: #212121;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.nav-list:last-child a {
+  padding-right: 0;
+}
+
+.banner-section {
+  position: relative;
+}
+.sliders {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+.sliders .slider {
+  min-width: 100%;
+  width: 100%;
+}
+.sliders .banner-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.sliders .banner-img h2 {
+  max-width: 350px;
+  padding: 30px;
+  position: absolute;
+  top: 8%;
+  right: 19%;
+  color: #fff;
+  font-size: 24px;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.banner-section .wrapper {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.slider-btn {
+  width: 88.5%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.prev-btn, .next-btn {
+  text-indent: -99999px;
+}
+.prev-btn::before, .next-btn::before {
+  content: "\f053";
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border: 5px solid #FFF;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  float: right;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-indent: 0;
+}
+
+.next-btn::before {
+  content: "\f054";
+  font-family: "FontAwesome";
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,49 @@
+header {
+  width: 100%;
+  @include positions (sticky, 999, 0);
+  background-color: $offWhite;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .12);
+
+  @at-root {
+    .header-content {
+      padding: 15px 0 17px;
+      @include flexbox(flex, $justify:space-between);
+      @include positions (relative);
+    }
+
+    .input-check { display: none; }
+    .burger { @extend .input-check; }
+
+    .pull-btn {
+      @include positions (absolute, $top: 0, $right: 0);
+      font-size: $extra-small - 3;
+      text-transform: uppercase;
+    }
+
+    .pull-icon { 
+      color: $black; 
+      
+      &::after {
+        @include icons (\f02e, $color: $green, $font: $extra-small);
+        padding-left: 8px;
+      }
+    }
+
+    .navbar { @include flexbox (flex, center); }
+
+    .nav-list {
+      margin: 15px 5px 0;
+
+      &:last-child { margin-right: 0; }
+
+      a {
+        padding: 14px;
+        color: $black;
+        font-size: $extra-small - 2;
+        text-transform: uppercase;
+      }
+
+      &:last-child a { padding-right: 0; }
+    }
+  }
+}
