@@ -8,3 +8,13 @@
 img { 
   @include image(cover, center)
 }
+
+
+@at-root {
+  .bg-color {
+    padding: 0px 5px;
+    background-color: $offWhite;
+  }
+
+  .forground-color { color: $green; }
+}

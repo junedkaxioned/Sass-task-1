@@ -123,7 +123,7 @@
 }
 
 // Flexbox Mixin
-@mixin flexbox($flex: null, $align: null, $direction:null, $wrap:null, $justify: null) {
+@mixin flexbox ($flex: null, $align: null, $direction:null, $wrap:null, $justify: null) {
   @if $flex {
     @include display-flex();
   }
