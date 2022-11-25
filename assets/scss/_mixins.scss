@@ -123,7 +123,7 @@
 }
 
 // Flexbox Mixin
-@mixin flexbox($flex: null, $align: null, $direction:null, $wrap:null, $justify: null,) {
+@mixin flexbox($flex: null, $align: null, $direction:null, $wrap:null, $justify: null) {
   @if $flex {
     @include display-flex();
   }
@@ -169,10 +169,18 @@
 
 //Icons Mixin
 @mixin icons ($content:null, $color:null, $font:null) {
-  content: quote($content);
+  content: $content;
   color: $color;
   font-family: "FontAwesome"; 
   font-size: $font;
+}
+
+@mixin icons-content ($value) {
+  @each $key, $value in $value {
+    li:nth-child(#{$key}) a::before {
+      content: "#{$value}";
+    }
+  }
 }
 
 // Media Query Mixins
@@ -205,3 +213,9 @@
   -o-object-position: $object-position;
   object-position: $object-position;
 } 
+
+// Box Shadow Mixin 
+@mixin  box-shadow ($shadow) {
+  -webkit-box-shadow: $shadow;
+  box-shadow: $shadow;
+}

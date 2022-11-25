@@ -1,0 +1,61 @@
+.welcome {
+  background-color: $offWhite;
+
+  @at-root {
+    .welcome-heading {
+      border-bottom: 2px dashed $lightgrey;
+      padding: 25px 0px;
+      font-size: $medium-large + 2;
+      text-align: center;
+      text-transform: uppercase;
+
+      span { color: $green; }
+    }
+
+    .services {
+      padding: 30px 0px;
+      @include flexbox (flex, $wrap: wrap, $justify: space-between);
+      text-align: center;
+      
+      @at-root {
+        .icon {
+          width: 145px;
+          height: 145px;
+          border: 1px solid darken($offWhite, 10%);
+          border-radius: 50%;
+          
+          a {
+            width: 115px;
+            height: 115px;
+            border: 15px solid $white;
+            border-radius: 50%;
+            @include flexbox (flex, center, $justify: center);
+            background-color: $green;
+            text-indent: -99999px;
+            
+            &::before {
+              @include icons ($color: $white, $font: $extra-large - 6);
+              float: right;
+              text-indent: 0;
+            }
+          }
+        }
+      }
+
+      @include icons-content ($services-icon);
+
+      h3 {
+        padding-top: 10px;
+        color: $black;
+        font-size: $medium-large;
+        text-transform: uppercase;
+      }
+
+      p {
+        color: lighten($black, 10%);
+        font-size: $small;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

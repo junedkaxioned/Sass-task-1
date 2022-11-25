@@ -123,10 +123,11 @@ header {
   z-index: 999;
   top: 0;
   background-color: #F7F7F7;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.12);
 }
 .header-content {
-  padding: 15px 0 17px;
+  padding: 15px 0 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -240,7 +241,7 @@ header {
   text-indent: -99999px;
 }
 .prev-btn::before, .next-btn::before {
-  content: "\f053";
+  content: \f053;
   color: #fff;
   font-family: "FontAwesome";
   font-size: 24px;
@@ -263,8 +264,89 @@ header {
 }
 
 .next-btn::before {
-  content: "\f054";
+  content: \f054;
   font-family: "FontAwesome";
+}
+
+.welcome {
+  background-color: #F7F7F7;
+}
+.welcome-heading {
+  border-bottom: 2px dashed #E8e8e8;
+  padding: 25px 0px;
+  font-size: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.welcome-heading span {
+  color: #8EB63E;
+}
+
+.services {
+  padding: 30px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.icon {
+  width: 145px;
+  height: 145px;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+}
+.icon a {
+  width: 115px;
+  height: 115px;
+  border: 15px solid #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #8EB63E;
+  text-indent: -99999px;
+}
+.icon a::before {
+  color: #fff;
+  font-family: "FontAwesome";
+  font-size: 58px;
+  float: right;
+  text-indent: 0;
+}
+
+.services li:nth-child(1) a::before {
+  content: "\f1b8";
+}
+.services li:nth-child(2) a::before {
+  content: "\f095";
+}
+.services li:nth-child(3) a::before {
+  content: "\f013";
+}
+.services li:nth-child(4) a::before {
+  content: "\f10b";
+}
+.services h3 {
+  padding-top: 10px;
+  color: #212121;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.services p {
+  color: #3b3b3b;
+  font-size: 14px;
+  text-transform: capitalize;
 }
 
 /*# sourceMappingURL=style.css.map */
