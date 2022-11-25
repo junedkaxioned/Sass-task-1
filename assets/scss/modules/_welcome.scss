@@ -39,8 +39,8 @@
           }
         }
       }
+      @include icons-content ($services-icons);
 
-      @include icons-content ($services-icon);
 
       h3 {
         padding-top: 10px;

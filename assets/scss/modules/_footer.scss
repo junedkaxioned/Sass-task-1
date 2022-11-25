@@ -1,0 +1,134 @@
+footer {
+  @at-root {
+    .footer-details {
+      padding: 10px 0px;
+      @include flexbox (flex, $justify:space-between);
+      font-size: $extra-small - 2;
+      line-height: 1.4;
+
+      >li {
+        margin-right: 30px;
+        @include flex-basis (25%);
+
+        a {
+          color: $black;
+        }
+
+        @at-root {
+          .footer-heading {
+            padding: 20px 0px 15px 0px;
+            font-size: $small;
+            text-transform: uppercase;
+          }
+
+          .follow { padding: 15px 0px 10px 0px; }
+
+          .icons {
+            a {
+              text-indent: -99999px;
+
+              &::before {
+                @include icons ($color: $lightgrey, $font: $medium-font);
+                padding-right: 10px;
+                float: right;
+                text-indent: 0;
+              }
+            }
+
+            @include icons-content ($social-icons);
+          }
+
+          .archives {
+            @include flexbox (flex, $direction: column);
+
+            @at-root .archive-lists {
+              padding: 10px 0px;
+              border-bottom: 1px dashed $grey;
+
+              &:first-child {
+                padding-top: 0;
+              }
+            }
+          }
+
+          .contact {
+            @extend .archives;
+
+            li {
+
+              a {
+                padding-bottom: 0px;
+                @include flexbox (flex, center);
+
+                &::before {
+                  padding-right: 10px;
+                  @include icons ($color: $grey, $font: $medium-font + 2);
+                }
+
+              }
+
+              &:nth-child(2) a::before {
+                font-size: $medium-large,
+              }
+
+              &:nth-child(3) a::before {
+                font-size: $medium-large + 4,
+              }
+            }
+
+            @include icons-content ($contact-icons);
+          }
+
+          .form-input {
+            padding: 10px 0px 10px 10px;
+            margin-bottom: 5px;
+            border: none;
+            border-bottom: 1px solid $grey;
+            float: right;
+            background-color: $offWhite;
+          }
+
+          .subscribe-btn {
+            padding: 8px 12px;
+            margin-top: 10px;
+            border: 1px solid $green;
+            float: right;
+            background-color: $green;
+            color: $white;
+            font-size: $extra-small - 2;
+            text-transform: uppercase;
+          }
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer-menu {
+      width: 100%;
+      background-color: $black;
+      color: $white;
+
+      a { color: $white; }
+
+      .foot {
+        @include flexbox (flex, $justify: space-between);
+
+        .menu {
+          a {
+            padding: 5px 5px 5px 0px;
+            font-size: $extra-small - 2;
+            text-transform: uppercase;
+          }
+        }
+
+        p {
+          padding: 5px 0px;
+          font-size: $extra-small - 2;
+        }
+      }
+    }
+  }
+}
