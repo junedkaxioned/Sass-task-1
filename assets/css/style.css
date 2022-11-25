@@ -189,9 +189,19 @@ header {
   color: #212121;
   font-size: 10px;
   text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 .nav-list:last-child a {
   padding-right: 0;
+}
+
+@media only screen and (min-width: 996px) {
+  header .nav-list a:hover {
+    color: #8EB63E;
+  }
 }
 
 .banner-section {
@@ -270,11 +280,23 @@ header {
   float: right;
   background-color: rgba(0, 0, 0, 0.3);
   text-indent: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .next-btn::before {
   content: "\f054";
   font-family: "FontAwesome";
+}
+
+@media only screen and (min-width: 996px) {
+  .prev-btn:hover::before, .next-btn:hover::before {
+    border-color: #8EB63E;
+    background-color: #fff;
+    color: #8EB63E;
+  }
 }
 
 .welcome, .advertisers, .portfolio {
