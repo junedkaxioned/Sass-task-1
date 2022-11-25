@@ -1,0 +1,41 @@
+.advertisers {
+  @extend .welcome;
+
+  @at-root {
+    .advertisers-heading {
+      @extend .portfolio-heading;
+    }
+
+    .advertisers-logo {
+      padding: 30px 0px;
+      @include flexbox (flex, center, $justify: space-between);
+
+      li {
+        margin-right: 2px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .top-btn { padding-bottom: 45px; }
+
+    .back-to-top {
+      width: 28px;
+      height: 28px;
+      border: 2px solid $green;
+      border-radius: 50%;
+      @include flexbox (flex, center, $justify: center);
+      float: right;
+      background-color: $green;
+      text-indent: -99999px;
+
+      &::before {
+        @include icons ("\f106", $color: $offWhite, $font: $small);
+        float: right;
+        text-indent: 0;
+      }
+    }
+  }
+}
