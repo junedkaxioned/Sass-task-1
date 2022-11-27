@@ -14,11 +14,12 @@
       padding: 30px 0px;
       @include flexbox (flex, $wrap: wrap, $justify: space-between);
       text-align: center;
-      
+
       @at-root {
         .icon {
           width: 145px;
           height: 145px;
+          margin: 0 auto;
           border: 1px solid darken($offWhite, 10%);
           border-radius: 50%;
           
@@ -30,7 +31,8 @@
             @include flexbox (flex, center, $justify: center);
             background-color: $green;
             text-indent: -99999px;
-            
+            @include transition (.5s);
+  
             &::before {
               @include icons ($color: $white, $font: $extra-large - 6);
               float: right;
@@ -56,4 +58,26 @@
       }
     }
   }
+  @include responsiveMin(996px) {
+
+    @at-root {
+      .icon {
+        a:hover {
+          border: 15px solid $green;
+          background-color: $white;
+
+          &:before {
+           @include icons ($color : $green); 
+          }
+        }
+      }
+    }
+  } 
+
+  @include responsiveMax (768px) {
+    @at-root .block {
+    flex: 2 2 50%;
+  }
+  }
+
 }

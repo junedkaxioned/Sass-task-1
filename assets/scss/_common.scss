@@ -18,3 +18,21 @@ img {
 
   .forground-color { color: $green; }
 }
+
+@include responsiveMinMax(1024px, 1280px) {
+  .wrapper {
+    width: 70%;
+  }
+}
+
+@include responsiveMinMax(995px, 1023px) {
+  .wrapper { width: 80%; }
+}
+
+@include responsiveMinMax(768px, 994px) {
+  .wrapper { width: 85%; }
+}
+
+@include responsiveMax(767px) {
+  .wrapper { width: 90%; }
+}

@@ -34,7 +34,7 @@
   .wrapper {
     width: 100%;
     @include positions(absolute, $top:50%, $left:50%);
-    @include transform (-50%, -50%);
+    @include transform (translate(-50%, -50%));
 
     @at-root {
       .slider-btn {
@@ -56,6 +56,7 @@
           float: right;
           background-color: rgba(0,0,0,0.3);
           text-indent: 0;
+          @include transition (.5s);
         }
       }
 
@@ -63,6 +64,38 @@
         @extend .prev-btn;
         &::before {
           @include icons ("\f054");
+        }
+      }
+    }
+  }
+
+  @include responsiveMin(996px) {
+
+    @at-root {
+      .prev-btn {
+        &:hover::before {
+          border-color: $green;
+          background-color: $white;
+          color: $green;
+        }
+        
+      }
+    }
+  } 
+
+  @include responsiveMax(768px){
+    @at-root {
+      .slider { 
+        height: 52vh; 
+        .banner-img {
+
+          h2 {
+            padding: 0;
+            top: 50%;
+            right: 0;
+            left: 50%;
+            @include transform (translate(-50%, -50%));
+          }
         }
       }
     }
