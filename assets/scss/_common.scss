@@ -9,6 +9,10 @@ img {
   @include image(cover, center)
 }
 
+html {
+  &.stop-scroll { overflow: hidden; }
+}
+  
 
 @at-root {
   .bg-color {
