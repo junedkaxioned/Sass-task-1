@@ -39,7 +39,7 @@
               .hover-icon {
                 display: none;
                 @include positions (absolute, $top: 50%, $left: 50%);
-                @include transform (-50%, -50%);
+                @include transform (translate(-50%, -50%));
 
                 @at-root {
                   .search-icon{
@@ -92,5 +92,48 @@
         }
       }
     }
+  }
+
+  @include responsiveMin(996px) {
+
+    @at-root {
+      .card:hover {
+        img {
+          opacity: 80%;
+          @include transition (.3s);
+          @include transform (scale(1.3));
+        }
+
+        .hover-icon {
+          display: block;
+          @include transition (.5s);
+        }
+      }
+
+      .hover-icon:hover {
+        a {
+          &::before {
+            border-color: $green;
+            background-color: $white;
+            color: $green;
+            @include transition (.3s);
+          }
+        }
+      }
+    }
+    .card-details {
+      a:hover {
+        background-color: transparent;
+        color: $green;
+      }
+    }
+  }
+  
+  @include responsiveMinMax (481px, 768px){
+    .card { flex-direction: column; }
+  }
+
+  @include responsiveMax (480px) {
+    .portfolio-cards { flex-direction: column; }
   }
 }
