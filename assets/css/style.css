@@ -117,6 +117,10 @@ img {
   object-position: center;
 }
 
+html.stop-scroll {
+  overflow: hidden;
+}
+
 .bg-color {
   padding: 0px 5px;
   background-color: #F7F7F7;
